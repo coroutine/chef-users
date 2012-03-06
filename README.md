@@ -1,7 +1,7 @@
 Description
 ===========
-
-Creates users from a databag search.
+This is a fork of the Opscode `users` cookbook (version 1.0.0). It adds an attribute
+that indicates which `users` data bag items are used to create sysadmin accounts.
 
 Requirements
 ============
@@ -17,10 +17,11 @@ Data bag named "users" must exist. See USAGE.
 
 Usage
 =====
+Override the `node[:users]` attribute in a role, and include the `users::sysadmins` recipe.
 
-This cookbook is specific for setting up sysadmin group and users for now.
-
-    include_recipe "users::sysadmins"
+    override_attributes(
+        :users => ['john', 'jane']
+    )
 
 Use knife to create a data bag for users.
 

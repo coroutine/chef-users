@@ -19,7 +19,11 @@
 
 sysadmin_group = Array.new
 
-search(:users, 'groups:sysadmin') do |u|
+# Get the users data bag id's from the node attribute, or default to "groups:sysadmin"
+search_criteria = (node[:users].map { |x| x = "id:#{x}" }).join(" OR ")
+search_criteria = (search_criteria.length > 0) ? search_criteria : "groups:sysadmin"
+
+search(:users, search_criteria) do |u|
   sysadmin_group << u['id']
 
   if node[:apache] and node[:apache][:allowed_openids]
