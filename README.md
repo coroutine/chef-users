@@ -60,6 +60,7 @@ The Apache cookbook can set up authentication using OpenIDs, which is set up usi
 License and Author
 ==================
 
+Author:: Brad Montgomery (<bmontgomery@coroutine.com>)
 Author:: Joshua Timberman (<joshua@opscode.com>)
 Author:: Seth Chisamore (<schisamo@opscode.com>)
 
