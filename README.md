@@ -1,6 +1,6 @@
 Description
 ===========
-This is a fork of the Opscode `users` cookbook (version 1.0.0). It adds an attribute
+This is a fork of the Opscode `users` cookbook (forked from version 1.0.0). It adds an attribute
 that indicates which `users` data bag items are used to create sysadmin accounts.
 
 Requirements
